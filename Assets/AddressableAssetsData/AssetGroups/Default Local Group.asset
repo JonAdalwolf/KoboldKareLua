@@ -22,6 +22,30 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: be83d4c92bdd7964c9b6a7e29ef4880a
+    m_Address: Assets/KoboldKare/LuaTest/LuaTest.unity
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 878fd063d9c5c594580a282390f09374
+    m_Address: Assets/KoboldKare/LuaTest/LuaTest.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PlayableMap
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0c64822bdf5a8d54aaf601b40c8f1a84
+    m_Address: Assets/KoboldKare/LuaTest/ScriptExample.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LuaFile
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 490050dd029386a4b9793e92fc2bfd54
+    m_Address: Assets/KoboldKare/ScriptableObjects/Modding/LuaScriptDatabase.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: bae434cba05d81d4b9cb5c181a2fbf2c, type: 2}
   m_SchemaSet:

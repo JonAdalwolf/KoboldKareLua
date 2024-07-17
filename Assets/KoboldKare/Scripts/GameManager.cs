@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour {
     private GameObject ModdingTab;
     [SerializeField]
     private GameObject SaveTab;
+    public LuaManager luaManager;
 
     [SerializeField] private PrefabDatabase penisDatabase;
     [SerializeField] private PrefabDatabase playerDatabase;
@@ -175,6 +176,7 @@ public class GameManager : MonoBehaviour {
 
         yield return LevelLoader.instance.LoadLevel((string)selectedMap.unityScene.RuntimeKey);
         NetworkManager.instance.StartSinglePlayer();
+        instance.luaManager.OnModsLoaded();
         Pause(false);
     }
 
