@@ -2,7 +2,9 @@
 using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
+using MoonSharp.Interpreter;
 using UnityEngine;
+using Coroutine = UnityEngine.Coroutine;
 
 public class Grabber : MonoBehaviourPun {
     private Kobold player;
@@ -100,6 +102,16 @@ public class Grabber : MonoBehaviourPun {
             } else {
                 body.velocity += OrbitCamera.GetPlayerIntendedRotation()* Vector3.forward * 10f;
                 Release();
+            }
+            foreach (ScriptableLuaScript luaScript in GameManager.instance.luaManager.scripts)
+            {
+                Script lua = luaScript.lua;
+                if (lua.Globals["OnObjectUse"] == null)
+                    continue;
+                Table proxy = LuaManager.FindExistingGO(body.gameObject, lua);
+                if (proxy == null)
+                    proxy = LuaManager.CreateNewGOProxy(body.gameObject, lua);
+                lua.Call(lua.Globals["OnObjectUse"], proxy);
             }
         }
         public void StopActivate() {
@@ -391,6 +403,16 @@ public class Grabber : MonoBehaviourPun {
 
                 grabbedObjects.Add(info);
                 RemoveGivebackKobold(info.kobold);
+                foreach (ScriptableLuaScript luaScript in GameManager.instance.luaManager.scripts)
+                {
+                    Script lua = luaScript.lua;
+                    if (lua.Globals["OnObjectGrab"] == null)
+                        continue;
+                    Table proxy = LuaManager.FindExistingGO(info.grabbable.gameObject, lua);
+                    if (proxy == null)
+                        proxy = LuaManager.CreateNewGOProxy(info.grabbable.gameObject, lua);
+                    lua.Call(lua.Globals["OnObjectGrab"], proxy);
+                }
             }
             if (grabbedObjects.Count >= maxGrabCountLocal) {
                 return;

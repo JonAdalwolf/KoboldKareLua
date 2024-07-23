@@ -84,7 +84,8 @@ public class Kobold : GeneHolder, IGrabbable, IPunObservable, IPunInstantiateMag
     private MilkLactator milkLactator;
     
     public Transform hip;
-    private KoboldCharacterController controller;
+    public KoboldCharacterController controller;
+    public Animator mainAnimator;
     
     [HideInInspector]
     public float stimulation = 0f;
@@ -108,6 +109,8 @@ public class Kobold : GeneHolder, IGrabbable, IPunObservable, IPunInstantiateMag
     public event QuaffAction quaff;
     private GameObject dickObject;
     private bool initialized = false;
+    [HideInInspector] 
+    public string LuaID = "-1";
     
     public IEnumerable<InflatableListener> GetAllInflatableListeners() {
         foreach (var listener in bellyInflater.GetInflatableListeners()) {
@@ -595,12 +598,14 @@ public class Kobold : GeneHolder, IGrabbable, IPunObservable, IPunInstantiateMag
         consumedReagents.Save(node, "consumedReagents");
         bool isPlayerControlled = (Kobold)PhotonNetwork.LocalPlayer.TagObject == this;
         node["isPlayerControlled"] = isPlayerControlled;
+        node["LuaID"] = LuaID;
     }
 
     public void Load(JSONNode node) {
         KoboldGenes loadedGenes = new KoboldGenes();
         loadedGenes.Load(node, "genes");
         arousal = node["arousal"];
+        LuaID = node["LuaID"];
         metabolizedContents.Load(node, "metabolizedContents");
         consumedReagents.Load(node, "consumedReagents");
         bool isPlayerControlled = node["isPlayerControlled"];

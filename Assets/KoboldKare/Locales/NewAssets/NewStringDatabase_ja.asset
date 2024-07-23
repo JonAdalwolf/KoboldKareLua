@@ -1352,6 +1352,14 @@ MonoBehaviour:
       MOD\u3092\u518D\u78BA\u8A8D\u3057\u3066\u304F\u3060\u3055\u3044\u3002"
     m_Metadata:
       m_Items: []
+  - m_Id: 459848692607991808
+    m_Localized: "\u304A\u307E\u30511"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 459854709794258944
+    m_Localized: "\u304A\u307E\u30512"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

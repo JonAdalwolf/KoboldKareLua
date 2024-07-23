@@ -274,6 +274,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "LuaExtra1",
+                    "type": "Button",
+                    "id": "51dee521-07f5-4e8a-855b-c3c71169de84",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LuaExtra2",
+                    "type": "Button",
+                    "id": "dd9b7ce1-2be3-451a-b45e-93f113bacde7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -978,6 +996,50 @@
                     "processors": "StickDeadzone,ScaleVector2(x=40,y=40)",
                     "groups": "",
                     "action": "LookJoystick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "106a649a-f6d5-4463-856b-934127ae30c1",
+                    "path": "<Keyboard>/g",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LuaExtra1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c1026283-8c51-41a1-af30-9adf94b2c384",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LuaExtra1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9134e9a3-61ef-4e21-bb05-4f3d0e579945",
+                    "path": "<Keyboard>/h",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LuaExtra2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "265f5ddc-5000-4202-9ce0-e8b76f5e0984",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LuaExtra2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

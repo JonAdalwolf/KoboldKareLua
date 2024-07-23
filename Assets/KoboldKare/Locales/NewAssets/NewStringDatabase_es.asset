@@ -1410,6 +1410,14 @@ MonoBehaviour:
       Por favor revise sus modificaciones."
     m_Metadata:
       m_Items: []
+  - m_Id: 459848692607991808
+    m_Localized: adicional 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 459854709794258944
+    m_Localized: adicional 2
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

@@ -61,7 +61,7 @@ public class CharacterDescriptor : MonoBehaviour, IPunInstantiateMagicCallback {
     [SerializeField] private float colliderHeight = 1.2f;
     [SerializeField] private float colliderRadius = 0.2f;
     
-    [SerializeField] private List<SkinnedMeshRenderer> bodyRenderers;
+    [SerializeField] public List<SkinnedMeshRenderer> bodyRenderers;
     
     [Tooltip("How high off the ground the character collider floats.")]
     [SerializeField] private float stepHeight = 1.2f;

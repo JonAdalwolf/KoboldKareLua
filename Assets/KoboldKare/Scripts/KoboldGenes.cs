@@ -163,7 +163,7 @@ public class KoboldGenes {
         return 0;
     }
 
-    private string GetPlayerName(byte id){
+    public string GetPlayerName(byte id){
         var playerDatabase = GameManager.GetPlayerDatabase();
         var players = playerDatabase.GetValidPrefabReferenceInfos();
         return players[id].GetKey();

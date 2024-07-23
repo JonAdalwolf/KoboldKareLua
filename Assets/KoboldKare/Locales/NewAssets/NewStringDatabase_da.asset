@@ -1406,6 +1406,14 @@ MonoBehaviour:
       spillet. Kontroller venligst dine mods."
     m_Metadata:
       m_Items: []
+  - m_Id: 459848692607991808
+    m_Localized: Ekstra 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 459854709794258944
+    m_Localized: Ekstra 1
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

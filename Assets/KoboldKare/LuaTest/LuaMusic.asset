@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d6f9b7d146f27a4198eefc8b2871596, type: 3}
-  m_Name: LuaTestMusic
+  m_Name: LuaMusic
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: 0c90771522029e149b61b1932263faf7, type: 3}
-  volume: 0.7
+  - {fileID: 8300000, guid: d7cb8fda1cb743f4c86a3d0e7fc01fd7, type: 3}
+  volume: 0.3
   group: {fileID: 243120066433540876, guid: bc155dfdccec1be4780029a8bd542de5, type: 2}
   pitchRange: 0

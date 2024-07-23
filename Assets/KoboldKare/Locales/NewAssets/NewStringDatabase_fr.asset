@@ -1413,6 +1413,14 @@ MonoBehaviour:
       le jeu. Veuillez v\xE9rifier vos mods."
     m_Metadata:
       m_Items: []
+  - m_Id: 459848692607991808
+    m_Localized: "Suppl\xE9ment 1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 459854709794258944
+    m_Localized: "Suppl\xE9ment 2"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

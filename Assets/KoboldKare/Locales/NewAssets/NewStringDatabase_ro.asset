@@ -1432,6 +1432,14 @@ MonoBehaviour:
       poate rupe jocul. V\u0103 rug\u0103m s\u0103 verifica\u021Bi dublu modurile."
     m_Metadata:
       m_Items: []
+  - m_Id: 459848692607991808
+    m_Localized: Extra 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 459854709794258944
+    m_Localized: Extra 2
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

@@ -5,7 +5,6 @@ using UnityEngine;
 public class LuaScriptDatabase : MonoBehaviour {
     private static LuaScriptDatabase instance;
     private Dictionary<string,ScriptableLuaScript> luaDictionary;
-    private ScriptableLuaScript dummyLua;
     private class LuaSorter : IComparer<ScriptableLuaScript> {
         public int Compare(ScriptableLuaScript x, ScriptableLuaScript y) {
             return String.Compare(x.name, y.name, StringComparison.InvariantCulture);
@@ -19,8 +18,6 @@ public class LuaScriptDatabase : MonoBehaviour {
             instance = this;
         }
 
-        dummyLua = ScriptableObject.CreateInstance<ScriptableLuaScript>();
-        
         luaSorter = new LuaSorter();
         luaDictionary = new Dictionary<string, ScriptableLuaScript>();
         foreach(var lua in scripts) {
@@ -30,26 +27,6 @@ public class LuaScriptDatabase : MonoBehaviour {
         if (luaDictionary.Count > 255) {
             throw new UnityException("Too many lua scripts, only support up to 255 unique scripts...");
         }
-    }
-    public static ScriptableLuaScript GetScript(string name) {
-        if (!ModManager.GetReady()) {
-            return instance.dummyLua;
-        }
-        if (instance.luaDictionary.ContainsKey(name)) {
-            return instance.luaDictionary[name];
-        }
-
-        return null;
-    }
-    public static ScriptableLuaScript GetReagent(byte id) {
-        if (!ModManager.GetReady()) {
-            return instance.dummyLua;
-        }
-        
-        return instance.scripts[id];
-    }
-    public static byte GetID(ScriptableLuaScript reagent) {
-        return (byte)instance.scripts.IndexOf(reagent);
     }
 
     public static void AddScript(ScriptableLuaScript newReagent) {
@@ -75,8 +52,7 @@ public class LuaScriptDatabase : MonoBehaviour {
             instance.luaDictionary.Remove(reagent.name);
         }
     }
-
-    public static List<ScriptableLuaScript> GetReagents() => instance.scripts;
+    
     public List<ScriptableLuaScript> scripts;
 
 }

@@ -1995,9 +1995,12 @@ MonoBehaviour:
     - {fileID: 6506915555090380242}
     milkSplatMaterial: {fileID: 2100000, guid: 3821f9133468bfa449f3dbee8d5a1aff, type: 2}
   hip: {fileID: 6506915555090380208}
+  controller: {fileID: 0}
+  mainAnimator: {fileID: 6506915555083475516}
   stimulation: 0
   stimulationMax: 10
   stimulationMin: -20
+  LuaID: -1
   references:
     version: 2
     RefIds:

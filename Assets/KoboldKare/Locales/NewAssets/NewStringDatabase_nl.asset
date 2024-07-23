@@ -685,19 +685,19 @@ MonoBehaviour:
   - m_Id: 83373358009864192
     m_Localized: 'Welkom bij Koboldkare!
 
-      
-
-      Koboldkare is een DRM-vrij
-      spel. Wees alstublieft veilig delen, Koboldkare heeft geen crack nodig om te
-      spelen!
-
-      
-
-      Heel erg bedankt voor het steunen van het spel!
 
 
-      Controleer
-      stoom, jeuk en Patreon voor updates en patchnotities.
+      Koboldkare is een DRM-vrij spel.
+      Wees alstublieft veilig delen, Koboldkare heeft geen crack nodig om te spelen!
+
+
+
+      Heel
+      erg bedankt voor het steunen van het spel!
+
+
+      Controleer stoom, jeuk en
+      Patreon voor updates en patchnotities.
 
 '
     m_Metadata:
@@ -1427,6 +1427,14 @@ MonoBehaviour:
   - m_Id: 342423402461405184
     m_Localized: Er was een uitzondering die een mod laadde, dit kan het spel breken.
       Controleer uw mods dubbel.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 459848692607991808
+    m_Localized: Extra 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 459854709794258944
+    m_Localized: Extra 2
     m_Metadata:
       m_Items: []
   references:
