@@ -173,10 +173,10 @@ public class GameManager : MonoBehaviour {
         if (!found) {
             throw new UnityException($"Failed to find a PlayableMap instance for the map {SceneManager.GetActiveScene().name}! Please make one!");
         }
-
         yield return LevelLoader.instance.LoadLevel((string)selectedMap.unityScene.RuntimeKey);
         NetworkManager.instance.StartSinglePlayer();
-        instance.luaManager.OnModsLoaded();
+        if(!instance.luaManager.exec)
+            instance.luaManager.OnLoad();
         Pause(false);
     }
 

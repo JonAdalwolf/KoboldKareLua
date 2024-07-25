@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdfea2ad4d9c552449fa1158f1b30125, type: 3}
   m_Name: ScriptExample
   m_EditorClassIdentifier: 
-  executing: 1
+  executing: 0
   name: Lua test
-  luaScript: "if self then\n\tself.fwd = self.object.GetDirection(\"forward\")\nend\n\nif
-    input.extra1 then\n\tself.physics.rb.ThrustAsVector(self.fwd)\nend"
+  luaScript: print(deltaFrames)

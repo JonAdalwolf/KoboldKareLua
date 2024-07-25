@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using MoonSharp.Interpreter;
 using Photon.Pun;
 using UnityEngine;
+using LuaProxies;
 
 public static class LuaKoboldCreation
 {

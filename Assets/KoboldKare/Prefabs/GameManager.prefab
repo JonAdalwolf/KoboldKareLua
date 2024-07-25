@@ -3754,7 +3754,8 @@ MonoBehaviour:
 
     Possum Voice:
 
-'
+    Lua
+    modding framework:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aef09d2f361f66b4ea034096e44f9e05, type: 2}
   m_sharedMaterial: {fileID: 7453147263721129256, guid: aef09d2f361f66b4ea034096e44f9e05,
@@ -32482,7 +32483,9 @@ MonoBehaviour:
 
     Gruff
 
-    CoffeeSoda'
+    CoffeeSoda
+
+    Luna'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aef09d2f361f66b4ea034096e44f9e05, type: 2}
   m_sharedMaterial: {fileID: 7453147263721129256, guid: aef09d2f361f66b4ea034096e44f9e05,

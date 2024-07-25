@@ -230,6 +230,8 @@ public class NetworkManager : SingletonScriptableObject<NetworkManager>, IConnec
         SpawnControllablePlayer();
         PopupHandler.instance.ClearAllPopups();
         GameManager.instance.Pause(false);
+        if(!GameManager.instance.luaManager.exec)
+            GameManager.instance.luaManager.OnLoad();
         //if (popup != null) {
         //popup.Hide();
         //}
@@ -248,7 +250,6 @@ public class NetworkManager : SingletonScriptableObject<NetworkManager>, IConnec
                 modNode["id"] = mod.id.ToString();
                 modArray.Add(modNode);
             }
-
             rootNode["modList"] = modArray;
             RaiseEventOptions raiseEventOptions = new RaiseEventOptions { CachingOption = EventCaching.DoNotCache, TargetActors = new []{other.ActorNumber}};
             PhotonNetwork.RaiseEvent((byte)'M', rootNode.ToString(), raiseEventOptions, SendOptions.SendReliable);
@@ -277,7 +278,8 @@ public class NetworkManager : SingletonScriptableObject<NetworkManager>, IConnec
         } else {
             GameManager.StartCoroutineStatic(LoadPlayerConfigMods());
         }
-
+        if(GameManager.instance.luaManager.exec)
+            GameManager.instance.luaManager.Unload();
         Debug.Log("Left room");
     }
     public void OnMasterClientSwitched(Player newMasterClient) {

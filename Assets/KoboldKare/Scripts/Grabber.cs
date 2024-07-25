@@ -106,12 +106,12 @@ public class Grabber : MonoBehaviourPun {
             foreach (ScriptableLuaScript luaScript in GameManager.instance.luaManager.scripts)
             {
                 Script lua = luaScript.lua;
-                if (lua.Globals["OnObjectUse"] == null)
+                if (lua.Globals["OnObjectThrow"] == null)
                     continue;
                 Table proxy = LuaManager.FindExistingGO(body.gameObject, lua);
                 if (proxy == null)
                     proxy = LuaManager.CreateNewGOProxy(body.gameObject, lua);
-                lua.Call(lua.Globals["OnObjectUse"], proxy);
+                lua.Call(lua.Globals["OnObjectThrow"], proxy);
             }
         }
         public void StopActivate() {

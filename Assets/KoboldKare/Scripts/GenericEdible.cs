@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using MoonSharp.Interpreter;
 using NetStack.Serialization;
 using Photon.Pun;
 using Photon.Realtime;
@@ -13,6 +14,7 @@ public class GenericEdible : GenericUsable {
 
     [SerializeField] private bool destroyOnEat = true;
     [SerializeField] private AudioPack eatSoundPack;
+    LuaManager manager;
     public override Sprite GetSprite(Kobold k) {
         return eatSymbol;
     }
@@ -32,7 +34,20 @@ public class GenericEdible : GenericUsable {
         k.bellyContainer.photonView.RPC(nameof(GenericReagentContainer.AddMixRPC), RpcTarget.All, buffer, photonView.ViewID, (byte)GenericReagentContainer.InjectType.Spray);
     }
 
-    public override void Use() {
+    public override void Use()
+    {
+        if (!manager)
+            manager = GameManager.instance.luaManager;
+        foreach (ScriptableLuaScript luaScript in manager.scripts)
+        {
+            Script lua = luaScript.lua;
+            if (lua.Globals["OnObjectUse"] == null)
+                continue;
+            Table proxy = LuaManager.FindExistingGO(gameObject, lua);
+            if (proxy == null)
+                proxy = LuaManager.CreateNewGOProxy(gameObject, lua);
+            lua.Call(lua.Globals["OnObjectUse"], proxy);
+        }
         if (destroyOnEat) {
             PhotonNetwork.Destroy(photonView.gameObject);
         }
